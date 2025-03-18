@@ -217,14 +217,13 @@ function BlockViewerToolbar() {
 						size="sm"
 						onClick={() => {
 							copyToClipboard(
-								`npx shadcn@latest add ${process.env.NEXT_PUBLIC_APP_URL}/r/styles/default/${item.name}.json`,
+								`npx shadcn@latest add ${item.name}`,
 							);
 						}}
 					>
 						{isCopied ? <Check /> : <Terminal />}
 						<span className="hidden lg:inline">
-							npx shadcn add {process.env.NEXT_PUBLIC_APP_URL}/r/styles/default/
-							{item.name}.json
+							npx shadcn add {item.name}
 						</span>
 					</Button>
 				</div>
