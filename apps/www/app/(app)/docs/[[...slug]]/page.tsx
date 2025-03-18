@@ -73,13 +73,13 @@ export async function generateMetadata({
   }
 }
 
-export async function generateStaticParams(): Promise<
-  DocPageProps["params"][]
-> {
-  return allDocs.map((doc) => ({
-    slug: doc.slugAsParams.split("/"),
-  }))
-}
+// export async function generateStaticParams(): Promise<
+//   DocPageProps["params"][]
+// > {
+//   return allDocs.map((doc) => ({
+//     slug: doc.slugAsParams.split("/"),
+//   }))
+// }
 
 export default async function DocPage({ params }: DocPageProps) {
   const doc = await getDocFromParams({ params })

@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation"
 import { docsConfig } from "@/config/docs"
 import { cn } from "@/lib/utils"
 import { useMetaColor } from "@/hooks/use-meta-color"
+import { PulsatingButton } from "@/components/magicui/pulsating-button"
 import { Button } from "@/registry/new-york/ui/button"
 import {
   Drawer,
@@ -56,6 +57,19 @@ export function MobileNav() {
       <DrawerContent className="max-h-[80svh] p-0">
         <div className="overflow-auto p-6">
           <div className="flex flex-col space-y-3">
+            <MobileLink
+              href={process.env.NEXT_PUBLIC_MAMDAS_DOCS || "#"}
+              onOpenChange={setOpen}
+            >
+              <PulsatingButton
+                pulseColor="rgba(220, 38, 38, 0.5)"
+                className="w-full text-xs font-bold"
+              >
+                <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent animate-rainbow-text bg-[length:200%_auto]">
+                  MAMDAS DOCS!
+                </span>
+              </PulsatingButton>
+            </MobileLink>
             {docsConfig.mainNav?.map(
               (item) =>
                 item.href && (

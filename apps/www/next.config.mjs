@@ -9,18 +9,30 @@ const nextConfig = {
   },
   reactStrictMode: true,
   swcMinify: true,
+  output: 'standalone',
+  // Optional: bring your own cache handler
+  // cacheHandler: path.resolve('./cache-handler.mjs'),
+  // cacheMaxMemorySize: 0, // Disable default in-memory caching
   images: {
+    // Optional: use a different optimization service
+    // loader: 'custom',
+    // loaderFile: './image-loader.ts',
+    //
+    // We're defaulting to optimizing images with
+    // Sharp, which is built-into `next start`
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "avatars.githubusercontent.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
       },
     ],
   },
+  // Nginx will do gzip compression. We disable
+  // compression here so we can prevent buffering
+  // streaming responses
+  compress: false,
   redirects() {
     return [
       {

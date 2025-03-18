@@ -5,6 +5,9 @@
       "files": ["scripts/**/*.{ts,mts}"],
       "parserOptions": {
         "project": "tsconfig.scripts.json"
+      },
+      "rules": {
+        "tailwindcss/classnames-order": "off"
       }
     }
   ]
