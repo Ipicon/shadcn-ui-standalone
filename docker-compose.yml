@@ -2,7 +2,7 @@ services:
   www:
     build:
       context: .
-      dockerfile: apps/www/Dockerfile
+      dockerfile: apps/v4/Dockerfile
     ports:
       - "3000:3000"
     environment:

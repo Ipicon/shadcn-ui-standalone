@@ -9,6 +9,7 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/*": ["./registry/**/*"],
   },
+  output: 'standalone',
   images: {
     remotePatterns: [
       {
@@ -21,6 +22,7 @@ const nextConfig = {
       },
     ],
   },
+  compress: false,
   redirects() {
     return [
       {
