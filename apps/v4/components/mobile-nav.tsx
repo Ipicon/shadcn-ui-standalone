@@ -12,6 +12,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
+import { PulsatingButton } from "./magicui/pulsating-button"
 
 export function MobileNav({
   tree,
@@ -69,6 +70,19 @@ export function MobileNav({
               Menu
             </div>
             <div className="flex flex-col gap-3">
+            <MobileLink
+              href={process.env.NEXT_PUBLIC_MAMDAS_DOCS || "#"}
+              onOpenChange={setOpen}
+            >
+              <PulsatingButton
+                pulseColor="rgba(220, 38, 38, 0.5)"
+                className="w-full text-xs font-bold"
+              >
+                <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent animate-rainbow-text bg-[length:200%_auto]">
+                  MAMDAS DOCS!
+                </span>
+              </PulsatingButton>
+            </MobileLink>
               <MobileLink href="/" onOpenChange={setOpen}>
                 Home
               </MobileLink>
